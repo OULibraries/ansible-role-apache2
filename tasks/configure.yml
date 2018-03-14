@@ -24,6 +24,13 @@
     mode: 0644
     owner: root
     group: root
+- name: 00-mpm.conf
+  copy:
+    src: 00-mpm.conf
+    dest: /etc/httpd/conf.modules.d/00-mpm.conf
+    mode: 0644
+    owner: root
+    group: root
 - name: Comment out the welcome conf
   command: sed -i "s/^[^#]/#&/" /etc/httpd/conf.d/welcome.conf
 - name: Set permissions for /srv
